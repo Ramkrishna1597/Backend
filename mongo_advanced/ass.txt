@@ -1,0 +1,284 @@
+> show dbs
+admin         0.000GB
+advanced      0.000GB
+config        0.000GB
+databaseName  0.000GB
+local         0.000GB
+> use advanced
+switched to db advanced
+> show collections
+movies
+
+> db.movies.find({})
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862cc"), "id" : 1, "movie_name" : "When Ladies Meet", "movie_genre" : "Comedy|Drama|Romance", "production_year" : 2006, "budget" : 15333 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862cd"), "id" : 2, "movie_name" : "Snowmageddon", "movie_genre" : "Adventure|Fantasy", "production_year" : 1995, "budget" : 17754 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862ce"), "id" : 3, "movie_name" : "Let It Snow", "movie_genre" : "Children|Drama|Romance", "production_year" : 2008, "budget" : 10718 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862cf"), "id" : 4, "movie_name" : "Journey 2: The Mysterious Island", "movie_genre" : "Action|Adventure|Comedy|Sci-Fi|IMAX", "production_year" : 2013, "budget" : 14500 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d0"), "id" : 5, "movie_name" : "Heroes for Sale", "movie_genre" : "Drama", "production_year" : 1993, "budget" : 10640 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d1"), "id" : 6, "movie_name" : "Frankenstein Conquers the World", "movie_genre" : "Action|Drama|Sci-Fi", "production_year" : 2000, "budget" : 15692 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d2"), "id" : 7, "movie_name" : "Young Adam", "movie_genre" : "Crime|Drama|Thriller", "production_year" : 2018, "budget" : 17021 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d3"), "id" : 8, "movie_name" : "Western Union", "movie_genre" : "Western", "production_year" : 2007, "budget" : 14330 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d4"), "id" : 9, "movie_name" : "Century of the Dragon (Long zai bian yuan)", "movie_genre" : "Crime|Thriller", "production_year" : 2010, "budget" : 9639 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d5"), "id" : 10, "movie_name" : "Love Letter ", "movie_genre" : "Drama|Romance", "production_year" : 2008, "budget" : 17207 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d6"), "id" : 11, "movie_name" : "Uninvited, The", "movie_genre" : "Drama|Horror|Mystery|Thriller", "production_year" : 2013, "budget" : 9233 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d7"), "id" : 12, "movie_name" : "Sound of Fury, The", "movie_genre" : "Crime|Drama|Film-Noir", "production_year" : 2005, "budget" : 14271 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d8"), "id" : 13, "movie_name" : "Made", "movie_genre" : "Comedy", "production_year" : 2012, "budget" : 14212 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862d9"), "id" : 14, "movie_name" : "Grace Lee Project, The", "movie_genre" : "Documentary", "production_year" : 2013, "budget" : 10281 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862da"), "id" : 15, "movie_name" : "Manhattan Melodrama", "movie_genre" : "Crime|Drama|Romance", "production_year" : 2009, "budget" : 19229 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862db"), "id" : 16, "movie_name" : "Silent Souls (Ovsyanki)", "movie_genre" : "Drama", "production_year" : 2017, "budget" : 12898 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862dc"), "id" : 17, "movie_name" : "Invisible Woman, The", "movie_genre" : "Drama|Romance", "production_year" : 1995, "budget" : 9550 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862dd"), "id" : 18, "movie_name" : "Dear Mr. Watterson", "movie_genre" : "Documentary", "production_year" : 2009, "budget" : 15278 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862de"), "id" : 19, "movie_name" : "Senso", "movie_genre" : "Drama|Romance|War", "production_year" : 1997, "budget" : 12456 }
+{ "_id" : ObjectId("622b341cfc87ba7e2cd862df"), "id" : 20, "movie_name" : "The D.I.", "movie_genre" : "Drama", "production_year" : 2004, "budget" : 11086 }
+Type "it" for more
+
+> db.movies.findOne({})
+{
+        "_id" : ObjectId("622b341cfc87ba7e2cd862cc"),
+        "id" : 1,
+        "movie_name" : "When Ladies Meet",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2006,
+        "budget" : 15333
+}
+> db.movies.findOne({},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+> db.movies.find({},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Snowmageddon", "production_year" : 1995 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{ "movie_name" : "Journey 2: The Mysterious Island", "production_year" : 2013 }
+{ "movie_name" : "Heroes for Sale", "production_year" : 1993 }
+{ "movie_name" : "Frankenstein Conquers the World", "production_year" : 2000 }
+{ "movie_name" : "Young Adam", "production_year" : 2018 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{ "movie_name" : "Century of the Dragon (Long zai bian yuan)", "production_year" : 2010 }
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Silent Souls (Ovsyanki)", "production_year" : 2017 }
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "Senso", "production_year" : 1997 }
+{ "movie_name" : "The D.I.", "production_year" : 2004 }
+Type "it" for more
+> db.movies.find({},{_id:0,movie_name:1,production_year:1}).pretty()
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Snowmageddon", "production_year" : 1995 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{
+        "movie_name" : "Journey 2: The Mysterious Island",
+        "production_year" : 2013
+}
+{ "movie_name" : "Heroes for Sale", "production_year" : 1993 }
+{
+        "movie_name" : "Frankenstein Conquers the World",
+        "production_year" : 2000
+}
+{ "movie_name" : "Young Adam", "production_year" : 2018 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{
+        "movie_name" : "Century of the Dragon (Long zai bian yuan)",
+        "production_year" : 2010
+}
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Silent Souls (Ovsyanki)", "production_year" : 2017 }
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "Senso", "production_year" : 1997 }
+{ "movie_name" : "The D.I.", "production_year" : 2004 }
+Type "it" for more
+> db.movies.find({movie_name:{$eq:"Love Letter"}},{_id:0,movie_name:1,production_year:1})
+> db.movies.find({movie_name:{$eq:"Love Letter "}},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+> db.movies.find({movie_name:{$ne:"Love Letter "}},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Snowmageddon", "production_year" : 1995 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{ "movie_name" : "Journey 2: The Mysterious Island", "production_year" : 2013 }
+{ "movie_name" : "Heroes for Sale", "production_year" : 1993 }
+{ "movie_name" : "Frankenstein Conquers the World", "production_year" : 2000 }
+{ "movie_name" : "Young Adam", "production_year" : 2018 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{ "movie_name" : "Century of the Dragon (Long zai bian yuan)", "production_year" : 2010 }
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Silent Souls (Ovsyanki)", "production_year" : 2017 }
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "Senso", "production_year" : 1997 }
+{ "movie_name" : "The D.I.", "production_year" : 2004 }
+{ "movie_name" : "Bill Maher: Victory Begins at Home", "production_year" : 2012 }
+Type "it" for more
+> db.movies.find({budget:{$gte:10000}},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Snowmageddon", "production_year" : 1995 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{ "movie_name" : "Journey 2: The Mysterious Island", "production_year" : 2013 }
+{ "movie_name" : "Heroes for Sale", "production_year" : 1993 }
+{ "movie_name" : "Frankenstein Conquers the World", "production_year" : 2000 }
+{ "movie_name" : "Young Adam", "production_year" : 2018 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Silent Souls (Ovsyanki)", "production_year" : 2017 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "Senso", "production_year" : 1997 }
+{ "movie_name" : "The D.I.", "production_year" : 2004 }
+{ "movie_name" : "Bill Maher: Victory Begins at Home", "production_year" : 2012 }
+{ "movie_name" : "Impostor", "production_year" : 2017 }
+{ "movie_name" : "Strange Behavior", "production_year" : 1991 }
+Type "it" for more
+> db.movies.find({budget:{$lte:10000}},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "Century of the Dragon (Long zai bian yuan)", "production_year" : 2010 }
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Professionals, The", "production_year" : 2017 }
+{ "movie_name" : "Shrek Forever After (a.k.a. Shrek: The Final Chapter)", "production_year" : 1994 }
+{ "movie_name" : "Bombshell", "production_year" : 2018 }
+{ "movie_name" : "Second Jungle Book: Mowgli & Baloo, The", "production_year" : 2010 }
+{ "movie_name" : "Red Road", "production_year" : 2002 }
+{ "movie_name" : "I Want Someone to Eat Cheese With", "production_year" : 2007 }
+{ "movie_name" : "Year My Parents Went on Vacation, The (O Ano em Que Meus Pais Saíram de Férias)", "production_year" : 2019 }
+{ "movie_name" : "Daar", "production_year" : 2003 }
+{ "movie_name" : "Futurama: Into the Wild Green Yonder", "production_year" : 1998 }
+{ "movie_name" : "Underground Comedy Movie, The", "production_year" : 1994 }
+{ "movie_name" : "Last Time, The", "production_year" : 2009 }
+{ "movie_name" : "Garbage Warrior", "production_year" : 2003 }
+{ "movie_name" : "Perrier's Bounty", "production_year" : 2004 }
+{ "movie_name" : "Crime of Father Amaro, The (Crimen del padre Amaro, El)", "production_year" : 2008 }
+{ "movie_name" : "Ernest in the Army", "production_year" : 1998 }
+{ "movie_name" : "Mark of the Cop", "production_year" : 1998 }
+{ "movie_name" : "Harvey Girls, The", "production_year" : 1997 }
+Type "it" for more
+> db.movies.find({$and:[{productio_year:{$gt:2000}},{budget:{$gt:10000}}]},{_id:0,movie_name:1,production_year:1})
+> db.movies.find({$and:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{ "movie_name" : "Journey 2: The Mysterious Island", "production_year" : 2013 }
+{ "movie_name" : "Young Adam", "production_year" : 2018 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Silent Souls (Ovsyanki)", "production_year" : 2017 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "The D.I.", "production_year" : 2004 }
+{ "movie_name" : "Bill Maher: Victory Begins at Home", "production_year" : 2012 }
+{ "movie_name" : "Impostor", "production_year" : 2017 }
+{ "movie_name" : "Fishtales", "production_year" : 2011 }
+{ "movie_name" : "The Winslow Boy", "production_year" : 2015 }
+{ "movie_name" : "Liv & Ingmar", "production_year" : 2011 }
+{ "movie_name" : "Memoirs of an Invisible Man", "production_year" : 2008 }
+{ "movie_name" : "Professional, The (Le professionnel)", "production_year" : 2013 }
+Type "it" for more
+> db.movies.find({$nor:[{production_year:{$gt:2000}},{budget:{$gt:10000}}]},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Shrek Forever After (a.k.a. Shrek: The Final Chapter)", "production_year" : 1994 }
+{ "movie_name" : "Futurama: Into the Wild Green Yonder", "production_year" : 1998 }
+{ "movie_name" : "Underground Comedy Movie, The", "production_year" : 1994 }
+{ "movie_name" : "Ernest in the Army", "production_year" : 1998 }
+{ "movie_name" : "Mark of the Cop", "production_year" : 1998 }
+{ "movie_name" : "Harvey Girls, The", "production_year" : 1997 }
+{ "movie_name" : "Outlaw and His Wife, The (a.k.a. You and I) (Berg-Ejvind och hans hustru)", "production_year" : 1999 }
+{ "movie_name" : "A Second Chance", "production_year" : 1998 }
+{ "movie_name" : "Elling", "production_year" : 1999 }
+{ "movie_name" : "Paimen, piika ja emäntä", "production_year" : 1993 }
+{ "movie_name" : "Jump Tomorrow", "production_year" : 1996 }
+{ "movie_name" : "Waking Madison ", "production_year" : 1992 }
+{ "movie_name" : "Samurai Vendetta", "production_year" : 1998 }
+> db.movies.find({$not:[{production_year:{$eq:2000}},{budget:{$lt:10000}}]},{_id:0,movie_name:1,production_year:1})
+Error: error: {
+        "ok" : 0,
+        "errmsg" : "unknown top level operator: $not. If you have a field name that starts with a '$' symbol, consider using $getField or $setField.",
+        "code" : 2,
+        "codeName" : "BadValue"
+}
+> db.movies.find({$nor:[{production_year:{$eq:2000}},{budget:{$gt:10000}}]},{_id:0,movie_name:1,production_year:1})
+{ "movie_name" : "Century of the Dragon (Long zai bian yuan)", "production_year" : 2010 }
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Invisible Woman, The", "production_year" : 1995 }
+{ "movie_name" : "Professionals, The", "production_year" : 2017 }
+{ "movie_name" : "Shrek Forever After (a.k.a. Shrek: The Final Chapter)", "production_year" : 1994 }
+{ "movie_name" : "Bombshell", "production_year" : 2018 }
+{ "movie_name" : "Second Jungle Book: Mowgli & Baloo, The", "production_year" : 2010 }
+{ "movie_name" : "Red Road", "production_year" : 2002 }
+{ "movie_name" : "I Want Someone to Eat Cheese With", "production_year" : 2007 }
+{ "movie_name" : "Year My Parents Went on Vacation, The (O Ano em Que Meus Pais Saíram de Férias)", "production_year" : 2019 }
+{ "movie_name" : "Daar", "production_year" : 2003 }
+{ "movie_name" : "Futurama: Into the Wild Green Yonder", "production_year" : 1998 }
+{ "movie_name" : "Underground Comedy Movie, The", "production_year" : 1994 }
+{ "movie_name" : "Last Time, The", "production_year" : 2009 }
+{ "movie_name" : "Garbage Warrior", "production_year" : 2003 }
+{ "movie_name" : "Perrier's Bounty", "production_year" : 2004 }
+{ "movie_name" : "Crime of Father Amaro, The (Crimen del padre Amaro, El)", "production_year" : 2008 }
+{ "movie_name" : "Ernest in the Army", "production_year" : 1998 }
+{ "movie_name" : "Mark of the Cop", "production_year" : 1998 }
+{ "movie_name" : "Harvey Girls, The", "production_year" : 1997 }
+Type "it" for more
+> db.movies.find({production_year:{$in:[2001,2002,2003,204,2005,2006,2007,2008,2009]}},{_id:0,production_year:1,movie_name:1})
+{ "movie_name" : "When Ladies Meet", "production_year" : 2006 }
+{ "movie_name" : "Let It Snow", "production_year" : 2008 }
+{ "movie_name" : "Western Union", "production_year" : 2007 }
+{ "movie_name" : "Love Letter ", "production_year" : 2008 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
+{ "movie_name" : "Dear Mr. Watterson", "production_year" : 2009 }
+{ "movie_name" : "Memoirs of an Invisible Man", "production_year" : 2008 }
+{ "movie_name" : "Keep Your Distance", "production_year" : 2002 }
+{ "movie_name" : "Dead Calling, A", "production_year" : 2002 }
+{ "movie_name" : "Fifth Element, The", "production_year" : 2005 }
+{ "movie_name" : "Monty Python's Life of Brian", "production_year" : 2009 }
+{ "movie_name" : "Stay Alive", "production_year" : 2009 }
+{ "movie_name" : "Glass Key, The", "production_year" : 2005 }
+{ "movie_name" : "Moustache, La", "production_year" : 2005 }
+{ "movie_name" : "Red Road", "production_year" : 2002 }
+{ "movie_name" : "Cheech and Chong's Animated Movie", "production_year" : 2008 }
+{ "movie_name" : "I Want Someone to Eat Cheese With", "production_year" : 2007 }
+{ "movie_name" : "Daar", "production_year" : 2003 }
+{ "movie_name" : "Garfield's Pet Force", "production_year" : 2003 }
+Type "it" for more
+> db.movies.find({},{_id:0,production_year:1,movie_name:1}).sort({production_year:-1,movie_name:1})
+{ "movie_name" : "Agata and the Storm (Agata e la tempesta)", "production_year" : 2020 }
+{ "movie_name" : "Cane Toads: The Conquest", "production_year" : 2020 }
+{ "movie_name" : "Cirque du Soleil: Dralion", "production_year" : 2020 }
+{ "movie_name" : "Doom", "production_year" : 2020 }
+{ "movie_name" : "Rare Birds", "production_year" : 2020 }
+{ "movie_name" : "Remember the Day", "production_year" : 2020 }
+{ "movie_name" : "Stars Look Down, The", "production_year" : 2020 }
+{ "movie_name" : "The Chatterley Affair", "production_year" : 2020 }
+{ "movie_name" : "Wanted", "production_year" : 2020 }
+{ "movie_name" : "2 Become 1 (Tin sun yut dui)", "production_year" : 2019 }
+{ "movie_name" : "Adventure of Sherlock Holmes' Smarter Brother, The", "production_year" : 2019 }
+{ "movie_name" : "Another You", "production_year" : 2019 }
+{ "movie_name" : "Astronaut Farmer, The", "production_year" : 2019 }
+{ "movie_name" : "Brokeback Mountain", "production_year" : 2019 }
+{ "movie_name" : "Combat Girls (Kriegerin)", "production_year" : 2019 }
+{ "movie_name" : "Cradle of Fear", "production_year" : 2019 }
+{ "movie_name" : "End of Watch", "production_year" : 2019 }
+{ "movie_name" : "Greenfingers", "production_year" : 2019 }
+{ "movie_name" : "Johnny Guitar", "production_year" : 2019 }
+{ "movie_name" : "Marriage Circle, The", "production_year" : 2019 }
+Type "it" for more
+> db.movies.find({},{_id:0,production_year:1,movie_name:1}).skip(10).limit(5)
+{ "movie_name" : "Uninvited, The", "production_year" : 2013 }
+{ "movie_name" : "Sound of Fury, The", "production_year" : 2005 }
+{ "movie_name" : "Made", "production_year" : 2012 }
+{ "movie_name" : "Grace Lee Project, The", "production_year" : 2013 }
+{ "movie_name" : "Manhattan Melodrama", "production_year" : 2009 }
