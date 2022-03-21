@@ -6,9 +6,8 @@ const comment = require("../models/comment.model");
 
 router.post( "/",
   validator({
-      likes:["required"],
-     coverImage:["required"],
-      content:["required"],
+   
+      body:["required"],
   
   }),
   async (req,res) => {

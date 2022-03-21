@@ -6,9 +6,8 @@ const publication = require("../models/Publication.model");
 
 router.post( "/",
   validator({
-      likes:["required"],
-     coverImage:["required"],
-      content:["required"],
+      name:["required"],
+   
   
   }),
   async (req,res) => {
